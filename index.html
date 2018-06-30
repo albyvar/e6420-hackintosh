@@ -47,5 +47,84 @@
   <li>A pen drive with Windows 7/8/10 UEFI (that's important) installer</li>	
   <li>A pen drive with Ubuntu 16.04 UEFI installer (other linux distros should also be good)</li>			
 </ul>
+<div class="container">
+	<h1><img src="req.png">Procedure (Windows)</h1>
+</div>
+
+<div class="container">
+	<div class="well">
+		<p><span class="text-primary"><b></span></b>
+		<ul>
+  <li>First of all, we need to install windows on our freshly cleaned hdd drive.</li>
+  <li>Boot the installer, select custom install and install windows on the only partition it will show. (If windows tells you something like "to ensure windows will work properly, some other partitions will be created", ignore it and continue.</li>
+  <li>After windows is installed, boot it.</li>
+  <li>Now we need to resize/change our EFI partition, because Windows by default creates an EFI partition of 200mb, but OS X require a slightly larger EFI partition to be able to format partitions. If you skip this step, OS X won't be able to format partitions and will complain something like "Mediakit reports not enough space". </li>	
+  <li>Follow this tutorial to resize/change EFI partition: (here)</li>	
+  <li>Now, open start menu and search for "Create and edit disk partitions" and open the first result.</li>
+  <li>Select your windows partition and right click on it. Choose shrink volume.</li>
+  <li>Shrink it by your desired size.</li>	
+  <li>Now repeat the process and create another partition (for ubuntu). Skip this step if you don't want to install ubuntu.</li>	
+</ul>	
+<div class="container">
+	<h1><img src="req.png">Procedure (macOS)</h1>
+</div>
+
+<div class="container">
+	<div class="well">
+		<p><span class="text-primary"><b></span></b>
+		<ul>
+  <li>Boot the macOS installer usb.</li>
+  <li>Once booted, open Disk Utility and format the partition you want to use for macOS to "journaled HFS+ (macOS Extended)</li>
+  <li>Close disk utility and install macOS to the newly formatted partition.</li>
+  <li>Once installation is completed, reboot and, using the usb installer, boot to macOS.</li>	
+  <li>Install Clover bootloader (download [here)</li>	
+  <li>Mount EFI partition of USB and of HDD, and copy the EFI/Clover folder from the USB to the HDD EFI partition.</li>
+  <li>If you don't want to install Ubuntu or anything else, you're done.</li>	
+</ul>
+<div class="container">
+	<h1><img src="req.png">Procedure (Ubuntu)</h1>
+</div>
+
+<div class="container">
+	<div class="well">
+		<p><span class="text-primary"><b></span></b>
+		<ul>
+  <li>Boot the USB installer of Ubuntu</li>
+  <li>Choose the partition where you want to install Ubuntu in, and use it as filesystem (ext4 journaled)</li>
+  <li>IMPORTANT: Choose the current EFI partition (often called Windows Boot Manager by Ubuntu) as bootloader destination.</li>
+  <li>Install Ubuntu</li>	
+  <li>Reboot, and you will see Clover has been replaced by GRUB. Don't worry, boot into BIOS, and set the priority back to Clover.</li>	
+  <li>If your BIOS does not have an option to manage UEFI boot entries, use EasyUEFI program for windows</li>
+  <li>Once you set priority back to clover, reboot and enjoy your triple boot!</li>	
+</ul>
+<div class="container">
+	<h1><img src="req.png">Files & Useful tools</h1>
+</div>
+
+<div class="container">
+	<div class="well">
+		<p><span class="text-primary"><b></span></b>
+		<ul>
+  <li>Clover bootloader: </li>
+  <li>My EFI folder:</li>
+  <li>Additional kexts:</li>
+  <li>EFI Mounter (to mount EFI on macOS): </li>	
+  <li>EasyUEFI: </li>	
+</ul>
+</body>
+</html>
+<div class="container">
+	<h1><img src="req.png">If you have any question or issue:</h1>
+</div>
+
+<div class="container">
+	<div class="well">
+		<p><span class="text-primary"><b></span></b>
+		<ul>
+  <li>Contact me on telegram:</li>
+  <li>Or twitter:</li>
+  <li>NOTE: I WON'T REPLY TO DMs anymore. Also, please talk to me only in English or Italian.</li>
+  <li>Thx ;)</li>	
+</ul>
 </body>
 </html>
